@@ -13,9 +13,9 @@ public class JdbcT3Select {
         //1.注册数据库的驱动
         Class.forName("com.mysql.jdbc.Driver");
         //2.获取数据库连接(超时时间，connect与socketTime分开，只要建立连接成功，查询过程看的是socketTime)
-        Connection connection = DriverManager.getConnection("jdbc:mysql://10.222.46.113:3306/aqv_bizs?connectTimeout=5&socketTimeout=3000", "j_aqv_bizs", "1SczDMZixanw");
+        Connection connection = DriverManager.getConnection("jdbc:mysql://182.92.242.147:3306/test?connectTimeout=500&socketTimeout=15000", "root", "123456");
         //3.需要执行的sql语句（睡眠2s）
-        String sql = "select  sleep(3) id,name,levels from v_log where remark ='e25b0f79-1a2b-43b9-9970-92a9212fc0a8' ";
+        String sql = "select  sleep(10) id,name,levels from v_log ";
 //        String sql = "select sleep(2)";
         //4.获取预处理对象，并依次给参数赋值
         PreparedStatement statement = connection.prepareCall(sql);

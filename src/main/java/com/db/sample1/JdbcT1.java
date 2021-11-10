@@ -13,7 +13,8 @@ public class JdbcT1 {
         //1.注册数据库的驱动
         Class.forName("com.mysql.jdbc.Driver");
         //2.获取数据库连接(超时时间，connect与socketTime分开，只要建立连接成功，sql执行过程看的是socketTime)
-        Connection connection = DriverManager.getConnection("jdbc:mysql://10.222.46.113:3306/aqv_bizs?connectTimeout=6&socketTimeout=300", "j_aqv_bizs", "1SczDMZixanw");
+        //        Connection connection = DriverManager.getConnection("jdbc:mysql://10.222.46.113:3306/aqv_bizs?connectTimeout=6&socketTimeout=300", "j_aqv_bizs", "1SczDMZixanw");
+        Connection connection = DriverManager.getConnection("jdbc:mysql://182.92.242.147:3306/test?connectTimeout=500&socketTimeout=3000&characterEncoding=UTF-8", "root", "123456");
         //3.需要执行的sql语句（?是占位符，代表一个参数）
         String sql = "insert into  v_log(name,levels,effect_time,creator,modifier,created_date,remark) values(?,?,?,?,?,?,?)";
         //4.获取预处理对象，并依次给参数赋值

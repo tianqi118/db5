@@ -15,7 +15,8 @@ public class JdbcT2 {
         //1.注册数据库的驱动
         Class.forName("com.mysql.jdbc.Driver");
         //2.获取数据库连接（里面内容依次是："jdbc:mysql://主机名:端口号/数据库名","用户名","登录密码"）
-        Connection connection = DriverManager.getConnection("jdbc:mysql://10.222.46.113:3306/aqv_bizs", "j_aqv_bizs", "1SczDMZixanw");
+//        Connection connection = DriverManager.getConnection("jdbc:mysql://10.222.46.113:3306/aqv_bizs", "j_aqv_bizs", "1SczDMZixanw");
+        Connection connection = DriverManager.getConnection("jdbc:mysql://182.92.242.147:3306/test?connectTimeout=500&socketTimeout=3000&characterEncoding=UTF-8", "root", "123456");
         //3.需要执行的sql语句（?是占位符，代表一个参数）
         String sql = "insert into v_log(name,levels) values(?,?)";
         //4.获取预处理对象，并依次给参数赋值
