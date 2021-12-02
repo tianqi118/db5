@@ -1,6 +1,7 @@
 package com.db.sample1;
 
 import java.sql.*;
+import java.util.Random;
 import java.util.UUID;
 
 /**
@@ -21,11 +22,11 @@ public class JdbcT1ForInsert {
         for (int i = 0; i < 10000; i++) {
             //4.获取预处理对象，并依次给参数赋值
             statement = connection.prepareCall(sql);
-            statement.setString(1, UUID.randomUUID().toString().substring(0, 23));    //数据库字段类型是String，就是setString；2代表第二个参数
-            statement.setString(2, "3"); //
+            statement.setString(1, UUID.randomUUID().toString().substring(0, 10).replace("-",""));    //数据库字段类型是String，就是setString；2代表第二个参数
+            statement.setString(2, ""+new Random().nextInt(9)); //
             statement.setDate(3, new Date(System.currentTimeMillis())); //
-            statement.setString(4, "拉斯柯达法鸡金佛山法拉盛" + i); //
-            statement.setString(5, "拉斯柯达法鸡金佛山法拉盛" + i); //
+            statement.setString(4, "creator-" + new Random().nextInt()); //
+            statement.setString(5, "modifier-" + new Random().nextInt()); //
             statement.setDate(6, new Date(System.currentTimeMillis())); //
             statement.setString(7, UUID.randomUUID().toString()); //
 

@@ -19,7 +19,7 @@ public class TestDbcp {
         //2.获取Statement对象
         Statement statement = con.createStatement();
         //3.查询
-        String sql = "select  sleep(1) id,name,levels from v_log where remark ='cfbd0d54-0a6f-4a07-b56c-dc8709ea47e2' ";
+        String sql = "select  sleep(1) id,name,levels from v_log where name ='596161cdb' ";
         ResultSet resultSet = statement.executeQuery(sql);
         //4.处理结果集
         while (resultSet.next()) {
