@@ -28,7 +28,7 @@ public class JdbcT1 {
         statement.setDate(6, new Date(System.currentTimeMillis())); //
         statement.setString(7, UUID.randomUUID().toString()); //
 
-        statement.setQueryTimeout(1);//这个超时没啥用啊，难道在查询的时候才生效？
+        statement.setQueryTimeout(1);//
         int s = statement.executeUpdate();
         System.out.println("插入结果：" + s);
 
